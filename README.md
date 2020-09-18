@@ -6,7 +6,7 @@ This action converts a JSON returned from symfony security checker to a markdown
 
 ### `data`
 
-**Required** Stringified JSON data
+**Required:** Stringified JSON data
 
 ## Output
 
