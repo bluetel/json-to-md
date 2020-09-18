@@ -1,10 +1,10 @@
 name: 'JSON to MD'
 description: 'Converts JSON data structure to markdown text for creating GitHub issues'
 inputs:
-  json-path:
-    description: 'Path to JSON file containing the data (~/data.json by default)'
+  data:
+    description: 'Stringified JSON data'
     required: true
-    default: './data.json'
+    default: ''
 outputs:
   md-data:
     description: 'Final result parsed in markdown'

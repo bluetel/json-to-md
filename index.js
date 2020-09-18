@@ -2,9 +2,9 @@ const core = require('@actions/core')
 const github = require('@actions/github')
 
 try {
-	// Load JSON data
-	const pathJSON = core.getInput('json-path')
-	const data = require(pathJSON)
+	// Stringified JSON data
+	const stringifiedJSON = core.getInput('data')
+	const data = JSON.parse(stringifiedJSON)
 
 	// Start building markdown
 	let md = '# Composer Security Vulnerability Detected\n'

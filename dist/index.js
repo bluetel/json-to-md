@@ -9,9 +9,9 @@ const core = __webpack_require__(96)
 const github = __webpack_require__(537)
 
 try {
-	// Load JSON data
-	const pathJSON = core.getInput('json-path')
-	const data = require(pathJSON)
+	// Stringified JSON data
+	const stringifiedJSON = core.getInput('data')
+	const data = JSON.parse(stringifiedJSON)
 
 	// Start building markdown
 	let md = '# Composer Security Vulnerability Detected\n'
