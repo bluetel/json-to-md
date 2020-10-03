@@ -4,6 +4,10 @@ on:
     issues:
         types: [opened, reopened]
 
+defaults:
+    run:
+        shell: bash
+
 jobs:
     notify:
         runs-on: ubuntu-18.04
@@ -11,7 +15,7 @@ jobs:
         steps:
             -   name: Send notification on Slack
 #                uses: rtCamp/action-slack-notify@v2.1.0
-                run: echo ${{ github.event.issues }}
+                run: cat ${{ github.event }}
 #                env:
 #                    SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL}}
 #                    SLACK_COLOR: '#F5BD1F'
