@@ -1,0 +1,20 @@
+name: Slack Notification
+
+on:
+    issues:
+        types: [opened, reopened]
+
+jobs:
+    notify:
+        steps:
+            -   name: Send notification on Slack
+                uses: rtCamp/action-slack-notify@v2.1.0
+                run: echo ${{ github.event.issues.url }}
+#                env:
+#                    SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL}}
+#                    SLACK_COLOR: '#F5BD1F'
+#                    SLACK_ICON: https://bluetel-general-assets.s3.eu-west-2.amazonaws.com/info-48.png
+#                    SLACK_MESSAGE: "New issue has been opened"
+#                    SLACK_TITLE: ${{  }}
+#                    SLACK_USERNAME: Beethoven
+#                    SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
