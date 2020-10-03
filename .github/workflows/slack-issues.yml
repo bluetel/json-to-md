@@ -9,18 +9,20 @@ defaults:
         shell: bash
 
 jobs:
-    notify:
+    Notify:
         runs-on: ubuntu-18.04
 
         steps:
             -   name: Send notification on Slack
+                run: |
+                    echo "${{ github.event.id }}"
+                    echo "${{ github.event.name }}"
 #                uses: rtCamp/action-slack-notify@v2.1.0
-                run: cat '${{ github.event.issues }}'
 #                env:
 #                    SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL}}
 #                    SLACK_COLOR: '#F5BD1F'
 #                    SLACK_ICON: https://bluetel-general-assets.s3.eu-west-2.amazonaws.com/info-48.png
-#                    SLACK_MESSAGE: "New issue has been opened"
-#                    SLACK_TITLE: ${{  }}
+#                    SLACK_MESSAGE: "A new issue has been opened for ${{ github.repository }}: https://github.com/${{ github.repository }}/issues"
+#                    SLACK_TITLE: New issue alert
 #                    SLACK_USERNAME: Beethoven
 #                    SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
