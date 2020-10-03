@@ -8,7 +8,7 @@ jobs:
     notify:
         steps:
             -   name: Send notification on Slack
-                uses: rtCamp/action-slack-notify@v2.1.0
+#                uses: rtCamp/action-slack-notify@v2.1.0
                 run: echo ${{ github.event.issues.url }}
 #                env:
 #                    SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL}}
