@@ -15,7 +15,7 @@ jobs:
         steps:
             -   name: Send notification on Slack
 #                uses: rtCamp/action-slack-notify@v2.1.0
-                run: cat ${{ github.event }}
+                run: cat '${{ github.event.issues }}'
 #                env:
 #                    SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL}}
 #                    SLACK_COLOR: '#F5BD1F'
